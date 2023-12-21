@@ -1,6 +1,7 @@
 import { Onest } from "next/font/google";
 import "./globals.css";
 import Providers from "@/providers/session";
+import { Toaster } from "sonner";
 
 const oneset = Onest({ subsets: ["latin"] });
 
@@ -12,6 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Toaster richColors />
       <Providers>
         <body className={oneset.className}>{children}</body>
       </Providers>

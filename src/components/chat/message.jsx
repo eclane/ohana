@@ -19,7 +19,7 @@ export default function ChatMessage({
     <section className="px-4 fixed bottom-8 left-0 z-50 w-full">
       <div className="mt-6 mx-auto max-w-screen-lg">
         <form onSubmit={handleSubmit}>
-          <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 bg-white px-3 py-2">
+          <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#148499] bg-gray-100 px-3 py-2">
             <button
               type="button"
               className="inline-block text-gray-700 focus:relative pr-1"

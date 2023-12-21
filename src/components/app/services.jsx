@@ -24,7 +24,7 @@ export default function AppServices() {
                             <span className="absolute inset-0"></span>
 
                             <div
-                                className="relative flex h-full transform items-end bg-white rounded-lg"
+                                className="relative flex h-full transform items-end bg-gray-100 rounded-lg"
                             >
                                 <div
                                     className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
