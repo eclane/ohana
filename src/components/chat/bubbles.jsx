@@ -15,7 +15,9 @@ export const TextBubble = ({ messages, user }) => {
               : "w-8 h-8 mr-3 rounded-full"
           }
           src={
-            message.role === "assistant" ? "/media/ohana_icon.webp" : user.image
+            message.role === "assistant"
+              ? "/media/ohana_icon.webp"
+              : "/media/ohana_icon.webp"
           }
           alt="Ohana Icon"
         />
