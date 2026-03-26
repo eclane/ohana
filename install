@@ -449,6 +449,35 @@ echo -e "${MUTED}█  █ █▀▀█${NC} █▀▀█ █  █ █▀▀█"
 echo -e "${MUTED}▀▀▀▀ ▀  ▀${NC} ▀  ▀ ▀  ▀ ▀  ▀"
 echo -e ""
 echo -e ""
+
+# Show activation command if ohana is not yet runnable in the current session.
+# This script runs in a bash subshell (curl | bash) so PATH checks against
+# the bash environment are unreliable — use command -v instead.
+if ! command -v ohana >/dev/null 2>&1; then
+    echo -e "${MUTED}To use ohana in this session, run:${NC}"
+    echo -e ""
+    case $current_shell in
+        fish)
+            echo -e "  ${ORANGE}source $HOME/.config/fish/config.fish${NC}"
+            ;;
+        zsh)
+            echo -e "  ${ORANGE}source ${ZDOTDIR:-$HOME}/.zshrc${NC}"
+            ;;
+        bash)
+            if [[ -f "$HOME/.bashrc" ]]; then
+                echo -e "  ${ORANGE}source $HOME/.bashrc${NC}"
+            else
+                echo -e "  ${ORANGE}source $HOME/.bash_profile${NC}"
+            fi
+            ;;
+        *)
+            echo -e "  ${ORANGE}export PATH=$INSTALL_DIR:\$PATH${NC}"
+            ;;
+    esac
+    echo -e "${MUTED}Or open a new terminal.${NC}"
+    echo -e ""
+fi
+
 echo -e "${MUTED}Get started with Ohana AI:${NC}"
 echo -e ""
 echo -e "ohana login   ${MUTED}# Log in to your Ohana AI account${NC}"
